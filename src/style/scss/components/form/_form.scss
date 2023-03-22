@@ -1,0 +1,7 @@
+.inputNumber {
+    border: 2px solid var(--color-white);
+    border-radius: 5px;
+    &:hover {
+        border-color: var(--color-red);
+    }
+}

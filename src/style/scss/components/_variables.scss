@@ -1,0 +1,28 @@
+/* container breakpoints */
+$container-max-widths: (
+  sm: 100%,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1320px,
+);
+
+/* grid breakpoints */
+$grid-breakpoints: (
+  xs: 450px,
+  sm: 576px,
+  md: 767px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+);
+
+/* display heading */
+$display-font-sizes: (
+  1: 5rem,
+  2: 4.5rem,
+  3: 3rem,
+  4: 2.5rem,
+  5: 2rem,
+  6: 1.5rem,
+);

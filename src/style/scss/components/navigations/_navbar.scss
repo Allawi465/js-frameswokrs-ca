@@ -1,0 +1,86 @@
+// navbar style
+
+.navbar {
+    --bs-navbar-padding-y: 0.3rem;
+    background: var(--color-LightBlack);
+
+    // nav links
+    .nav-link {
+      font-family: 'PT Sans', sans-serif;
+      font-weight: Regular 400 Italic;
+      color: var(--color-lightgrey);
+  
+      &.active,
+      .navbar-nav .show > & {
+        color: var(--color-primary);
+      }
+    }
+
+    &-brand {
+        margin-right: unset !important;
+    }
+
+    &-logo {
+        position: relative;
+        cursor: pointer;
+    }
+
+    &-circle {
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        border: var(--color-primary) solid 2px;
+        text-align: center;
+        line-height: 45px;
+        padding-left: 9px;
+        padding-right: 9px;
+        color: var(--color-primary);
+        font-size: 28px;
+        font-weight: bold;
+        display: inline-block;
+      }
+
+    &-text {
+        font-weight: 400;
+        position: absolute;
+        top: 50%;
+        left: 70%;
+        transform: translate(-50%,-50%);
+        color: var(--color-primary);
+    }
+
+    // cart svg container
+    &-cartDiv {
+        border-radius: 10px;
+        text-align: center;
+        position: relative;
+    }
+
+    // cart svg container number span
+    &-quantityCart {
+        position: absolute;
+        right: 1px;
+        bottom: 20px;
+        display: inline-block;
+        height: 18px;
+        min-width: 18px;
+        margin-left: 8px;
+        padding-right: 6px;
+        padding-left: 6px;
+        border-bottom-left-radius: 9px;
+        border-bottom-right-radius: 9px;
+        border-top-left-radius: 9px;
+        border-top-right-radius: 9px;
+        background-color: var(--color-white);
+        color: var(--color-darkred);
+        font-size: 13px;
+        font-weight: bold;
+        text-align: center;
+    }
+}
+
+@media (max-width: 767px) {
+    .navbarContainer {
+        max-width: 100%;
+    }  
+}

@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Caramel&family=Nunito+Sans:ital,wght@0,400;0,600;0,700;1,400&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Qwitcher+Grypen&family=Roboto:wght@100;300;400&family=Tai+Heritage+Pro&display=swap');
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-family: 'PT Sans', sans-serif;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.content {
+    flex: 1;
+}
+
+#root {
+    background: var(--color-LightBlack) !important;
+    min-height: 100vh;
+}
+
+.lead-hero {
+    padding: unset;
+
+    &-bgImages {
+        max-width: 100%;
+        min-height: 550px !important;
+        background-size: cover !important;
+        background-position: right !important;
+        position: relative;
+        z-index: 99;
+    }
+
+    &-wrapper {
+        min-height: 550px;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 1rem;
+        padding-top: 125px;
+    }
+
+    &-heading {
+        font-weight: bolder;
+        font-size: 62px;
+        line-height: 1.2;
+    }
+
+    &-paragraph {
+        width: 35%;
+        margin-bottom: 25px;
+        font-size: 18px;
+    }
+}
+
+
+@media (max-width: 991px) {
+
+    .lead-hero {
+        &-paragraph {
+            width: 50%;
+            margin-bottom: 25px;
+            font-size: 18px;
+        }
+    }
+}
+
+@media (max-width: 575px) {
+
+    .lead-hero {
+        wrapper {
+            padding-bottom: 45px;
+            justify-content: flex-end;
+            min-height: 550px;
+            max-width: 100%;
+            padding-top: unset;
+        }
+
+        &-heading {
+            font-size: 35px;
+        }
+
+        &-paragraph {
+            width: 70%;
+        }
+
+    }
+}
