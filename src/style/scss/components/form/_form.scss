@@ -5,3 +5,11 @@
         border-color: var(--color-red);
     }
 }
+
+
+@media (max-width: 575px) {
+   .searchForm {
+    width: 100%;
+    margin-bottom: 10px;
+   }
+}

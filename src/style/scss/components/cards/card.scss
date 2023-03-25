@@ -53,6 +53,12 @@
 
 }
 
+.toast {
+    --bs-toast-bg: #36373e;
+    --bs-toast-header-color: var(--color-LightBlack);
+    --bs-toast-header-bg: #ffffff;
+}
+
 .list-group {
     --bs-list-group-color: var(--color-white);
     --bs-list-group-bg: unset;

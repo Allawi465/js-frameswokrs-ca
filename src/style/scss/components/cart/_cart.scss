@@ -5,14 +5,18 @@
 }
 
 .cart {
-    max-width: 1200px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     flex-wrap: wrap;
     gap: 5px;
 }
 
 .cart-products {
+
+    &-container  {
+        justify-content: center;
+    }
+    
     &-imgContainer {
         width: 180px;
         height: 180px;
@@ -98,6 +102,12 @@
     .heading {
         display: flex;
         justify-content: left;
+    }
+
+    .cart-products {
+        &-container  {
+            justify-content: left;
+        }
     }
 }
 
