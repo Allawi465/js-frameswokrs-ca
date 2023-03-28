@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const HeroBtn = styled.button`
-  background-color: transparent;
+  background: transparent;
   padding: 5px 25px;
   color: ${(props) => props.theme.color.white};
   display: inline-block;
@@ -26,7 +26,7 @@ export const CheckOut = styled.button`
   border-style: none;
   border-width: 1px;
   border-radius: 5px;
-  background-color: #A29FFA;
+  background: #A29FFA;
   padding: 10px 25px;
   text-align: center;
   border-color: ${(props) => props.theme.color.primary};
@@ -37,10 +37,10 @@ export const CheckOut = styled.button`
 
 export const ViewItem = styled(HeroBtn)`
   color: ${(props) => props.theme.color.black};
-  background-color: ${(props) => props.theme.color.primary};
+  background: ${(props) => props.theme.color.primary};
   font-weight: unset;
   :hover {
-    background-color: ${(props) => props.theme.color.LightBlack};
+    background: ${(props) => props.theme.color.LightBlack};
     border-color: ${(props) => props.theme.color.primary};
     color: ${(props) => props.theme.color.white};
   }
@@ -73,10 +73,17 @@ export const ContinueShop = styled(ViewItem)`
 font-weight: unset;
 text-align: center;
 color:  ${(props) => props.theme.color.black};
-background-color: ${(props) => props.theme.color.primary};
+background: ${(props) => props.theme.color.primary};
 border-color: ${(props) => props.theme.color.primary};
 :hover {
-  background-color: ${(props) => props.theme.color.white};
+  background: ${(props) => props.theme.color.white};
   color:  ${(props) => props.theme.color.black};
 }
+`;
+
+export const ContactSendIn = styled(CheckOut)`
+background: #CBCAFB;
+  :hover {
+    background: #A29FFA;
+  }
 `;
