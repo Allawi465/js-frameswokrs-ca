@@ -1,17 +1,9 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import './App.scss';
-import { CartProvider } from './component/cart/CartProvider';
-import Layout from './component/layout/index';
-import { Home, Product, Cart } from './pages';
-
-function Contact() {
-  return <div className='home'>Contact</div>;
-}
-
-function RouteNotFound() {
-  return <div className='home'>Page not found</div>;
-}
+import { CartProvider } from './components/cart/context/cartProvider';
+import Layout from './components/layout/index';
+import { Home, Product, Cart, Checkout, Contact, RouteNotFound } from './pages';
 
 function App() {
   return (
@@ -22,6 +14,7 @@ function App() {
             <Route index element={<Home />} />
             <Route path="contact" element={<Contact />} />
             <Route path="cart" element={<Cart />} />
+            <Route path="Checkout" element={<Checkout />} />
             <Route path="product/:id" element={<Product />} />
             <Route path="*" element={<RouteNotFound />} />
           </Route>
