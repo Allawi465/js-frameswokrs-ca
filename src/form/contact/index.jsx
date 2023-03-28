@@ -1,63 +1,47 @@
-import React, { useEffect } from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import * as yup from 'yup';
+import schema from './schema';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Form from 'react-bootstrap/Form';
+import { ContactSendIn } from '../../style/buttons.style';
+import MessageAfterSubmit from '../../components/contact';
 
-
-const schema = yup
-    .object({
-        fullName: yup
-            .string()
-            .min(3, 'Your first name should be at least 3 characters.')
-            .required('Please enter your full name'),
-        email: yup
-            .string()
-            .email("Invalid email address")
-            .required('Please enter your email'),
-        subject: yup
-            .string()
-            .min(3, 'Your subject should be at least 3 characters.')
-            .required('Please enter your subject'),
-        body: yup
-            .string()
-            .min(3, 'Your body texts should be at least 3 characters.')
-            .required('Please enter your body texts'),
-    })
-    .required();
 
 function ContactForm() {
     const {
         register,
         handleSubmit,
         reset,
-        formState,
-        formState: { errors, isSubmitSuccessful },
+        formState: { errors },
     } = useForm({
         resolver: yupResolver(schema),
     });
 
+    const [formSubmitted, setFormSubmitted] = useState(false);
+
     function onFormSubmit(data) {
         console.log(data);
-        reset({ ...data });
+        reset();
+        setFormSubmitted(true);
     }
 
-    useEffect(() => {
-        if (isSubmitSuccessful) {
-            reset();
-        }
-    }, [isSubmitSuccessful, formState, reset]);
-
+    if (formSubmitted) {
+        return (
+            <MessageAfterSubmit />
+        );
+    }
 
     return (
         <>
             <form onSubmit={handleSubmit(onFormSubmit)}>
+            <h1 className="mt-4">Contact us</h1>
                 <FloatingLabel label="Full name"
                     className="my-3 text-black">
                     <Form.Control
                         {...register('fullName')}
                         type="text"
+                        name="fullName"
                         placeholder="full name"
                     />
                     <p className='text-white'>{errors.fullName?.message}</p>
@@ -67,6 +51,7 @@ function ContactForm() {
                     <Form.Control
                         {...register('email')}
                         type="email"
+                        name="email"
                         placeholder="name@example.com" />
                     <p className='text-white'>{errors.email?.message}</p>
                 </FloatingLabel>
@@ -75,6 +60,7 @@ function ContactForm() {
                     <Form.Control
                         {...register('subject')}
                         type="text"
+                        name="subject"
                         placeholder="Subject" />
                     <p className='text-white'>{errors.subject?.message}</p>
                 </FloatingLabel>
@@ -83,12 +69,13 @@ function ContactForm() {
                     <Form.Control
                         {...register('body')}
                         as="textarea"
+                        name="body"
                         placeholder="body"
                         style={{ height: '100px' }}
                     />
                     <p className='text-white'>{errors.body?.message}</p>
                 </FloatingLabel>
-                <input type="submit" />
+                <ContactSendIn type="submit">Send in</ContactSendIn>
             </form>
         </>
     );
