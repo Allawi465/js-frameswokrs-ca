@@ -5,8 +5,7 @@ import ContactForm from '../../form/contact';
 function Contact() {
     return <div className='text-white'>
         <Container>
-        <div style={{maxWidth: '650px', margin: 'auto'}}>
-            <h1 className="mt-4">Contact us</h1>
+        <div style={{maxWidth: '500px', margin: 'auto', paddingTop: '60px'}}>
             <ContactForm />
         </div>
         </Container>
