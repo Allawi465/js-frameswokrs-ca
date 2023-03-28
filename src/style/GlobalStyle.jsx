@@ -10,6 +10,12 @@ html {
     --color-lightgrey: #8e8e8e;
     --color-red: #eb5757;
     --color-darkred: #670901;
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    font-family: 'PT Sans', sans-serif;
 }
 `;
 
