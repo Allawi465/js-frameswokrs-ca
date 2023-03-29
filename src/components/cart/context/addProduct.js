@@ -1,6 +1,6 @@
 import { save } from '../../../utils/localStorage';
 
-export function addProduct(state, dispatch, id, title, price, discountedPrice, image, num) {
+function AddProduct(state, dispatch, id, title, price, discountedPrice, image, num) {
   dispatch({
     type: "addProduct",
     payload: {
@@ -20,3 +20,5 @@ export function addProduct(state, dispatch, id, title, price, discountedPrice, i
 
   save("cart", { ...state, cart: getImgUrl });
 }
+
+export default AddProduct;
