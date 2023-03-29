@@ -1,10 +1,9 @@
 import React, { useReducer, useEffect } from "react";
-import { initialState, reducer } from './cartContext';
+import { initialState, reducer, CartContext } from './cartContext';
 import { load, save } from "../../../utils/localStorage";
-import { CartContext } from "./cartContext";
 
-export function CartProvider(props) {
-    const [state, dispatch] = useReducer(reducer, load("cart") || initialState);
+function CartProvider(props) {
+    const [ state, dispatch ] = useReducer(reducer, load("cart") || initialState);
   
     useEffect(() => {
       save("cart", state);
@@ -16,3 +15,5 @@ export function CartProvider(props) {
       </CartContext.Provider>
     );
 }
+
+export default CartProvider;
