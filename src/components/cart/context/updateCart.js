@@ -1,4 +1,4 @@
-export function updateProduct( dispatch, id, num ) {
+function UpdateProduct( dispatch, id, num ) {
     dispatch({
         type: "updateProduct",
         payload: {
@@ -8,4 +8,4 @@ export function updateProduct( dispatch, id, num ) {
     });
 }
 
-export default updateProduct;
+export default UpdateProduct;
