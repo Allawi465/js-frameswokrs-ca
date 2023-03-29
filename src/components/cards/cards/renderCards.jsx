@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import useApi from '../../../hooks/useAPI';
+import { useApi } from '../../../hooks/index';
 import { Container, Row } from 'react-bootstrap';
-import Loading from '../../spinner/spinner';
-import CardsProducts from './index.jsx';
-import ErrorMessage from '../../alerts/index';
-import Search from '../../../form/search';
+import CardsProducts from './index';
+import { Search } from '../../../form/index';
+import { Loading, ErrorMessage } from '../../index';
 
-function useCard() {
+function RenderApi() {
 
   const url = 'https://api.noroff.dev/api/v1/online-shop';
 
@@ -47,4 +46,4 @@ function useCard() {
   );
 }
 
-export default useCard;
+export default RenderApi;

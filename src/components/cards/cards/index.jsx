@@ -1,14 +1,13 @@
 import React from 'react';
 import { Card, Col } from 'react-bootstrap';
-import { ViewItem } from '../../../style/buttons.style';
 import { Link } from 'react-router-dom';
-import usePrice from '../../../hooks/usePrice'
-import calculatePercentage from '../../../hooks/usePercentage'
+import { usePercentage, usePrice } from '../../../hooks/index'
+import { ViewItem } from '../../../style/buttons.style';
 
 function CardsProducts(props) {
   const { id, title, price, discountedPrice, imageUrl } = props;
   const { priceToDisplay, originalPrice } = usePrice(price, discountedPrice); 
-  const { discountPercentage } = calculatePercentage(price, discountedPrice)
+  const { discountPercentage } = usePercentage(price, discountedPrice)
 
   return (
     <Col xs={12} sm={6} md={4} lg={4} key={id} className='my-3'>

@@ -1,5 +1,5 @@
 import React from 'react';
-import ProductStarRating from '../../ratingStar';
+import { ProductStarRating } from '../../index';
 
 function renderReviews(reviews, rating) {
     return (

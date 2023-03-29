@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Container, Nav, Navbar } from 'react-bootstrap';
-import { CartContext } from '../../cart/context/cartContext';
+import { CartContext } from '../../cart/context/index';
 import { BsCart, BsX  } from 'react-icons/bs';
 import { RiMenu5Line } from 'react-icons/ri';
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
-import ScrollTop from '../../scrollToTopp';
+import { ScrollTop } from '../../index';
 
 function Footer() {
     return (

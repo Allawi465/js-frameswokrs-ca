@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Container } from 'react-bootstrap';
 import frontImages from '../../images/front-page.jpg'
 import { HeroBtn } from '../../style/buttons.style';
-import { Container } from 'react-bootstrap';
 
 function Hero() {
     return (

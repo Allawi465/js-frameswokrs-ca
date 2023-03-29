@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
-import { CartContext } from '../context/cartContext';
-import { EmptyCart } from '.';
+import { CartContext } from '../context/index';
+import { EmptyCart } from './index';
 
 function CartHeading() {
     const { state } = useContext(CartContext);

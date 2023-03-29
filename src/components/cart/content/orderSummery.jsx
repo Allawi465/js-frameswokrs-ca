@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { CartContext } from '../context/cartContext';
+import { CartContext } from '../context/index';
 import { CheckOut } from '../../../style/buttons.style';
 import { BiRightArrowAlt } from 'react-icons/bi';
 

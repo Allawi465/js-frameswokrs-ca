@@ -1,12 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
-import { CartContext } from '../../components/cart/context/cartContext';
+import { Loading } from '../../components/index';
 import { load, save } from '../../utils/localStorage';
-import { EmptyCart } from '../../components/cart/content';
-import Loading from '../../components/spinner/spinner';
-import { tax, shipping } from '../cart/content/orderSummery';
+import { CartContext } from '../../components/cart/context/index';
 import TotalSummery from './totalSummery';
 import CartHistory from './cartHistory';
+import { EmptyCart } from '../../components/cart/content/index';
+import { tax, shipping } from '../cart/content/orderSummery';
 
 function CheckOutHistory() {
     const { state, dispatch } = useContext(CartContext);

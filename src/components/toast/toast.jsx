@@ -1,7 +1,5 @@
 import React from 'react';
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
-import Toast from 'react-bootstrap/Toast';
+import { Col, Row, Toast } from 'react-bootstrap';
 
 function AddedProductsToast(props) {
   const { show, setShow, message } = props;

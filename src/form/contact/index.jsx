@@ -2,10 +2,9 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import schema from './schema';
-import FloatingLabel from 'react-bootstrap/FloatingLabel';
-import Form from 'react-bootstrap/Form';
+import { FloatingLabel, Form } from 'react-bootstrap';
+import { MessageAfterSubmit } from '../../components/index';
 import { ContactSendIn } from '../../style/buttons.style';
-import MessageAfterSubmit from '../../components/contact';
 
 
 function ContactForm() {
@@ -35,7 +34,7 @@ function ContactForm() {
     return (
         <>
             <form onSubmit={handleSubmit(onFormSubmit)}>
-            <h1 className="mt-4">Contact us</h1>
+                <h1 className="mt-4">Contact us</h1>
                 <FloatingLabel label="Full name"
                     className="my-3 text-black">
                     <Form.Control

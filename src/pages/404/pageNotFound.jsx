@@ -1,6 +1,6 @@
 import React from 'react';
-import { Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { Container } from 'react-bootstrap';
 import { ContinueShop } from '../../style/buttons.style';
 import { BiRightArrowAlt } from 'react-icons/bi';
 

@@ -1,10 +1,8 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import useApi from '../../hooks/useAPI';
-import ErrorMessage from '../../components/alerts/index';
-import Loading from '../../components/spinner/spinner';
-import CardProducts from '../../components/cards/card';
 import { Container } from 'react-bootstrap';
+import { useApi } from '../../hooks/index';
+import { ErrorMessage, Loading, CardProducts } from '../../components/index';
 
 function Product() {
     let { id } = useParams();

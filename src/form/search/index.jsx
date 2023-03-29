@@ -1,6 +1,5 @@
 import React from 'react';
-import Form from 'react-bootstrap/Form';
-import InputGroup from 'react-bootstrap/InputGroup';
+import { Form, InputGroup } from 'react-bootstrap';
 import { HiOutlineSearchCircle } from 'react-icons/hi';
 
 function Search({ setSearchInput }) {

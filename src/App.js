@@ -1,8 +1,8 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import './App.scss';
-import { CartProvider } from './components/cart/context/cartProvider';
-import Layout from './components/layout/index';
+import { CartProvider } from './components/cart/context';
+import { Layout } from './components/index';
 import { Home, Product, Cart, Checkout, Contact, RouteNotFound } from './pages';
 
 function App() {

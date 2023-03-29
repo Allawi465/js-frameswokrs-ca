@@ -1,15 +1,14 @@
 import React, { useState } from 'react';
 import { Card, Col, Container } from 'react-bootstrap';
-import usePrice from '../../../hooks/usePrice'
-import calculatePercentage from '../../../hooks/usePercentage'
-import AddProductsToCart from '../../../form/cart/addToCart';
 import renderReviews from './reviews';
-import AddedProductsToast from '../../toast/toast';
+import { usePercentage, usePrice } from '../../../hooks/index'
+import { AddProductsToCart } from '../../../form/index';
+import { AddedProductsToast } from '../../index';
 
 function CardProducts(props) {
     const { id, title, price, discountedPrice, imageUrl, description, rating, reviews } = props;
     const { priceToDisplay, originalPrice } = usePrice(price, discountedPrice);
-    const { discountPrice } = calculatePercentage(price, discountedPrice)
+    const { discountPrice } = usePercentage(price, discountedPrice)
 
     const [showToast, setShowToast] = useState(false);
     const [message, setMessage] = useState("");
