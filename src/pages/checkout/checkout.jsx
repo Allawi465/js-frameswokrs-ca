@@ -1,4 +1,4 @@
-import CheckOutHistory from "../../components/checkout";
+import { CheckOutHistory } from "../../components/index";
 
 function Checkout() {
 
