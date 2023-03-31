@@ -4,11 +4,13 @@ import './App.scss';
 import { CartProvider } from './components/cart/context';
 import { Layout } from './components/index';
 import { Home, Product, Cart, Checkout, Contact, RouteNotFound } from './pages';
+import { HelmetProvider } from 'react-helmet-async';
 
 function App() {
   return (
-    <CartProvider>
-      <div>
+    <div>
+      <CartProvider>
+        <HelmetProvider>
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
@@ -19,8 +21,9 @@ function App() {
             <Route path="*" element={<RouteNotFound />} />
           </Route>
         </Routes>
-      </div>
-    </CartProvider>
+        </HelmetProvider>
+      </CartProvider>
+    </div>
   );
 }
 
