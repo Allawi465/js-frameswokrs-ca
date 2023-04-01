@@ -38,7 +38,7 @@ function RenderApi() {
           products
         ) : (
           <div className='text-white my-4' style={{ textAlign: 'center', width: '100%' }}>
-            <ErrorMessage variant="danger" text="No products found" />
+            <ErrorMessage variant="dark" text={`No matches for “${searchInput}”`} />
           </div>
         )}
       </Row>
