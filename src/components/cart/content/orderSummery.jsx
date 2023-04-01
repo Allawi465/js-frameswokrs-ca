@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { CartContext } from '../context/index';
-import { CheckOut } from '../../../style/buttons.style';
+import { CheckoutButton } from '../../../form';
 import { BiRightArrowAlt } from 'react-icons/bi';
 
 export const tax = 59;
@@ -32,7 +32,7 @@ function OrderSummery() {
                         <span className='cart-summery-total'> Kr {orderTotal.toFixed(2)},- </span>
                     </div>
                     <div style={{margin: '10px'}}>
-                        <CheckOut as={Link} to="/Checkout">Checkout</CheckOut>
+                        <CheckoutButton />
                         <div className='d-flex justify-content-center'>
                             <p style={{margin: '10px'}}>or <Link to='/' style={{color: '#A29FFA'}}>Continue Shopping<BiRightArrowAlt/></Link></p>
                         </div>
