@@ -9,20 +9,20 @@ import { HelmetProvider } from 'react-helmet-async';
 function App() {
   return (
     <div>
-      <CartProvider>
-        <HelmetProvider>
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<Home />} />
-            <Route path="contact" element={<Contact />} />
-            <Route path="cart" element={<Cart />} />
-            <Route path="Checkout" element={<Checkout />} />
-            <Route path="product/:id" element={<Product />} />
-            <Route path="*" element={<RouteNotFound />} />
-          </Route>
-        </Routes>
-        </HelmetProvider>
-      </CartProvider>
+      <HelmetProvider>
+        <CartProvider>
+          <Routes>
+            <Route path="/" element={<Layout />}>
+              <Route index element={<Home />} />
+              <Route path="contact" element={<Contact />} />
+              <Route path="cart" element={<Cart />} />
+              <Route path="Checkout" element={<Checkout />} />
+              <Route path="product/:id" element={<Product />} />
+              <Route path="*" element={<RouteNotFound />} />
+            </Route>
+          </Routes>
+        </CartProvider>
+      </HelmetProvider>
     </div>
   );
 }
