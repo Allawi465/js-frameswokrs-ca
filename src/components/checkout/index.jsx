@@ -1,32 +1,27 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
-import { Loading } from '../../components/index';
 import { load, save } from '../../utils/localStorage';
 import { CartContext } from '../../components/cart/context/index';
 import TotalSummery from './totalSummery';
 import CartHistory from './cartHistory';
-import { EmptyCart } from '../../components/cart/content/index';
-import { tax, shipping } from '../cart/content/orderSummery';
+import { tax, shipping } from '../../components/cart/content/index';
+import CheckoutEmpty from './checkoutEmpty';
 
 function CheckOutHistory() {
-    const { state, dispatch } = useContext(CartContext);
+    const { dispatch } = useContext(CartContext);
     const [cartHistory, setCartHistory] = useState([]);
-    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        save("cartHistory", state.cart);
-    }, [state]);
-
-    useEffect(() => {
-        const historyCart = load("cartHistory");
+        const historyCart = load("cartHistory") || [];
         setCartHistory(historyCart);
-        dispatch({ type: 'clearCart' });
-        setLoading(false);
-    }, [dispatch]);
+    }, []);
 
-    if (loading) {
-        return <div> <Loading /></div>
-    }
+    useEffect(() => {
+        if (cartHistory.length > 0) {
+            dispatch({ type: "clearCart" });
+            save("cartHistory", []);
+        }
+    }, [cartHistory, dispatch]);
 
     const total = cartHistory.reduce((accumulator, currentItem) => {
         return accumulator + currentItem.price * currentItem.quantity;
@@ -47,7 +42,7 @@ function CheckOutHistory() {
                 </>
             ) : (
                 <div className='mt4'>
-                    <EmptyCart />
+                    <CheckoutEmpty />
                 </div>
             )}
         </Container>
