@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Caramel&family=Nunito+Sans:ital,wght@0,400;0,600;0,700;1,400&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Qwitcher+Grypen&family=Roboto:wght@100;300;400&family=Tai+Heritage+Pro&display=swap');
+
+/* container breakpoints */
+$container-max-widths: (
+  sm: 100%,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1320px,
+);
+
+/* grid breakpoints */
+$grid-breakpoints: (
+  xs: 450px,
+  sm: 576px,
+  md: 767px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+);
+
+/* display heading */
+$display-font-sizes: (
+  1: 5rem,
+  2: 4.5rem,
+  3: 3rem,
+  4: 2.5rem,
+  5: 2rem,
+  6: 1.5rem,
+);

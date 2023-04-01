@@ -1,0 +1,43 @@
+// footer style 
+
+.footer-style {
+    min-height: 100px;
+    padding-top: 40px;
+    padding-bottom: 10px;
+
+    &-sec {
+        border-top: var(--color-primary) solid 8px;
+    }
+
+    &-p {
+        color: var(--color-primary);
+        margin-top: unset;
+        margin-bottom: unset;
+    }
+
+    &-links {
+        color: $white;
+        text-decoration: none;
+        cursor: pointer;
+        &:hover {
+            color: var(--color-darkred);;
+        }
+    }
+
+    &-links.active {
+        color:  var(--color-primary);
+    }
+}
+
+.scrollTop {
+    color: var(--color-primary);
+    text-decoration: underline;
+    text-underline-offset: 8px;
+    margin-top: unset;
+    margin-bottom: unset;
+    cursor: pointer;
+    &:hover {
+        text-decoration-color: $white;
+        color: $white;
+    }
+}

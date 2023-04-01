@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import './App.scss';
+import { CartProvider } from './components/cart/context';
+import { Layout } from './components/index';
+import { Home, Product, Cart, Checkout, Contact, RouteNotFound } from './pages';
+import { HelmetProvider } from 'react-helmet-async';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <HelmetProvider>
+        <CartProvider>
+          <Routes>
+            <Route path="/" element={<Layout />}>
+              <Route index element={<Home />} />
+              <Route path="contact" element={<Contact />} />
+              <Route path="cart" element={<Cart />} />
+              <Route path="Checkout" element={<Checkout />} />
+              <Route path="product/:id" element={<Product />} />
+              <Route path="*" element={<RouteNotFound />} />
+            </Route>
+          </Routes>
+        </CartProvider>
+      </HelmetProvider>
     </div>
   );
 }
