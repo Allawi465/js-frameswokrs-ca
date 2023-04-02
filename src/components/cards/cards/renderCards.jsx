@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useApi } from '../../../hooks/index';
 import { Container, Row } from 'react-bootstrap';
 import CardsProducts from './index';
@@ -10,7 +10,6 @@ function RenderApi() {
   const url = 'https://api.noroff.dev/api/v1/online-shop';
 
   const { data, isLoading, isError } = useApi(url);
-  const [searchInput, setSearchInput] = useState("");
 
   if (isLoading) {
     return <div className='d-flex justify-content-center mt-4'><Loading /></div>;
@@ -19,8 +18,7 @@ function RenderApi() {
   if (isError) {
     return <div style={{ textAlign: 'center' }}><ErrorMessage variant="danger" text="We are sorry, something went wrong." /></div>;
   }
-
-  const products = data.filter((product) => product.title.toLowerCase().includes(searchInput.toLowerCase())).map((product) => <CardsProducts {...product} key={product.id} />);
+  const products = data.map((product) => <CardsProducts {...product} key={product.id} />);
 
   return (
     <Container className='products-cards container-lg'>
@@ -30,17 +28,11 @@ function RenderApi() {
           <h2>
             Our latest Products
           </h2>
-          <Search setSearchInput={setSearchInput} />
+          <Search data={data}/>
         </div>
       </div>
       <Row className="products-cards">
-        {products.length > 0 ? (
-          products
-        ) : (
-          <div className='text-white my-4' style={{ textAlign: 'center', width: '100%' }}>
-            <ErrorMessage variant="dark" text={`No matches for “${searchInput}”`} />
-          </div>
-        )}
+      {products}
       </Row>
     </Container>
   );
