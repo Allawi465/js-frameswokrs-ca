@@ -30,20 +30,24 @@ function Search({ data }) {
                         <InputGroup.Text className='bg-white'><HiOutlineSearchCircle size={24} /></InputGroup.Text>
                     </InputGroup>
                 </div>
-                {searchInput.length > 0 && filteredData.length > 0 && (
+                {searchInput.trim().length > 0 &&  (
                     <div className='searchResult'>
-                        {filteredData.map((value, key) => {
-                            return (
-                                <Link to={`/product/${value.id}`} key={key}>
-                                    <div className='search-products d-flex justify-content-between my-2'>
-                                        <p className='mt-2'>{value.title}</p>
-                                        <div style={{ width: '50px', height: '50px' }}>
-                                            <img src={value.imageUrl} alt={value.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                        {filteredData.length > 0 ? (
+                            filteredData.map((value, key) => {
+                                return (
+                                    <Link to={`/product/${value.id}`} key={key}>
+                                        <div className='search-products d-flex justify-content-between my-2'>
+                                            <p className='mt-2'>{value.title}</p>
+                                            <div style={{ width: '50px', height: '50px' }}>
+                                                <img src={value.imageUrl} alt={value.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                            </div>
                                         </div>
-                                    </div>
-                                </Link>
-                            );
-                        })}
+                                    </Link>
+                                );
+                            })
+                        ) : (
+                            <p className="text-black">No match found for '{searchInput}'</p>
+                        )}
                     </div>
                 )}
             </form>
@@ -52,3 +56,4 @@ function Search({ data }) {
 }
 
 export default Search;
+
