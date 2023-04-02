@@ -11,7 +11,7 @@ function Contact() {
             <meta name="keywords" content="contact, online store, shopping, products" />
         </Helmet>
         <Container>
-            <div style={{ maxWidth: '500px', margin: 'auto', paddingTop: '60px' }}>
+            <div className="ContactContainer" style={{ maxWidth: '500px', margin: 'auto'}}>
                 <ContactForm />
             </div>
         </Container>
