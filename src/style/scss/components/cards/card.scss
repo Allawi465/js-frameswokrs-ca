@@ -22,22 +22,16 @@
     }
 
     &-imgContainer {
-        overflow: hidden;
-        transition: all 1.1s;
         position: relative;
-        border-radius: 10px;
         width: 45%;
         max-height: 400px;
-
-        &:hover .products-card-img {
-            transform: scale(1.2);
-        }
     }
 
     &-img {
         object-fit: cover;
         transition: all 1.1s;
         width: 100%;
+        border-radius: 10px;
         height: 100%;
     }
 
