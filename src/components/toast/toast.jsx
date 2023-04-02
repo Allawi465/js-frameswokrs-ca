@@ -7,7 +7,7 @@ function AddedProductsToast(props) {
   return (
     <Row>
       <Col xs={6}>
-        <Toast  bg="Light" onClose={() => setShow(false)} animation={true} show={show} delay={1800} autohide style={{ position: 'absolute', top: '15%', left: '50%', transform: 'translate(-50%, -50%)' }}>
+        <Toast className='toast' bg="Light" onClose={() => setShow(false)} animation={true} show={show} delay={1800} autohide>
           <Toast.Header>
             <strong className="me-auto">BUYERS.</strong>
           </Toast.Header>
