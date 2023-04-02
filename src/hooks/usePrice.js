@@ -1,5 +1,5 @@
 function usePrice(price, discountedPrice) {
-    const itemDiscount = discountedPrice !== undefined && discountedPrice < price;
+    const itemDiscount = discountedPrice < price;
     const priceToDisplay = itemDiscount ? discountedPrice : price;
     const originalPrice = itemDiscount ? price : null;
 
