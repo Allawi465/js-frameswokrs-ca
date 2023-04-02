@@ -1,16 +1,61 @@
 .inputNumber {
     border: 2px solid var(--color-white);
     border-radius: 5px;
+
     &:hover {
         border-color: var(--color-red);
     }
 }
 
+.ContactContainer {
+    padding-top: 60px;
+}
+
+.searchForm {
+    position: relative;
+}
+
+.searchResult {
+    z-index: 1000;
+    position: absolute;
+    left: 0;
+    margin-top: 5px;
+    color: black;
+    padding: 5px;
+    max-width: 100%;
+    width: 255px;
+    max-height: 200px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    overflow: hidden;
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    overflow: -moz-scrollbars-none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.search-products {
+   width: 250px;
+   max-width: 100%;
+}
 
 @media (max-width: 575px) {
-   .searchForm {
-    width: 100%;
-    margin-bottom: 10px;
-    margin-left: -5px;
-   }
+    .searchForm {
+        width: 100%;
+        margin-bottom: 10px;
+        margin-left: -5px;
+    }
+
+    .ContactContainer {
+        padding-top: 10px !important;
+    }
+
+    .searchResult, .search-products {
+        max-width: 100%;
+        width: 500px;
+    }
 }
