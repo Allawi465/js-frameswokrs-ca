@@ -7,9 +7,9 @@ function AddedProductsToast(props) {
   return (
     <Row>
       <Col xs={6}>
-        <Toast className='toast' bg="Light" onClose={() => setShow(false)} animation={true} show={show} delay={1800} autohide>
+        <Toast className='toast' bg="Light" onClose={() => setShow(false)} animation={true} show={show} delay={3000} autohide>
           <Toast.Header>
-            <strong className="me-auto">BUYERS.</strong>
+            <strong className="me-auto">Added to cart</strong>
           </Toast.Header>
           <Toast.Body className='text-white'>{message}</Toast.Body>
         </Toast>
